@@ -3,97 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClickGet - سوق الإمارات</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <title>ClickGet - المنصة الأفضل للإعلانات في الإمارات</title>
   <style>
     body {
-      font-family: 'Cairo', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f1f1;
+      color: #333;
     }
     header {
-      background-color: #111827;
-      color: white;
-      padding: 1rem 2rem;
+      background: #0d1b2a;
+      color: #fff;
       text-align: center;
+      padding: 20px 10px;
     }
     nav {
+      background: #1b263b;
+      padding: 10px;
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      background: #1f2937;
-      padding: 0.5rem;
+      gap: 20px;
     }
     nav a {
       color: white;
       text-decoration: none;
     }
-    .hero {
-      background-color: #e5e7eb;
-      padding: 2rem;
-      text-align: center;
-    }
-    .hero h1 {
-      color: #111827;
-    }
-    .sections {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 1rem;
-      padding: 2rem;
-    }
     .section {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 10px;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: 0.3s;
     }
-    .section:hover {
-      transform: translateY(-5px);
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+    .category {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 150px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      cursor: pointer;
     }
     footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #111827;
+      background: #0d1b2a;
       color: white;
-      margin-top: 2rem;
+      text-align: center;
+      padding: 10px;
+    }
+    input, textarea, select, button {
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .product-list {
+      max-width: 800px;
+      margin: auto;
+    }
+    .product {
+      background: #fff;
+      margin: 10px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
   <header>
     <h1>ClickGet - المنصة الأفضل للإعلانات في الإمارات</h1>
-    <p>بيع واشتري أي شيء بسهولة وبأمان!</p>
+    <p>بيع واشتري أي شي بسهولة وأمان</p>
   </header>
 
   <nav>
     <a href="#">الرئيسية</a>
-    <a href="#">جميع المنتجات</a>
-    <a href="#">أضف إعلان</a>
-    <a href="#">تواصل معنا</a>
+    <a href="#add">أضف إعلان</a>
+    <a href="#products">جميع المنتجات</a>
+    <a href="#contact">تواصل معنا</a>
   </nav>
 
-  <div class="hero">
-    <h1>ابحث عن المنتجات اللي تحتاجها</h1>
+  <div class="section">
+    <h2>ابحث عن المنتجات اللي تحتاجها</h2>
     <p>كل الأقسام - كل الإمارات - أسعار مميزة</p>
   </div>
 
-  <section class="sections">
-    <div class="section">📱 إلكترونيات</div>
-    <div class="section">🎮 ألعاب</div>
-    <div class="section">👕 ملابس</div>
-    <div class="section">👜 شنط واكسسوارات</div>
-    <div class="section">🚗 سيارات</div>
-    <div class="section">🏡 عقارات</div>
-    <div class="section">💻 كمبيوترات</div>
-    <div class="section">🛒 عروض</div>
-  </section>
+  <div class="categories">
+    <div class="category" onclick="filterCategory('عقارات')">🏡 عقارات</div>
+    <div class="category" onclick="filterCategory('سيارات')">🚗 سيارات</div>
+    <div class="category" onclick="filterCategory('كمبيوترات')">💻 كمبيوترات</div>
+    <div class="category" onclick="filterCategory('ملابس')">👗 ملابس</div>
+    <div class="category" onclick="filterCategory('ألعاب')">🎮 ألعاب</div>
+    <div class="category" onclick="filterCategory('إلكترونيات')">📱 إلكترونيات</div>
+    <div class="category" onclick="filterCategory('شنط')">🔒 شنط</div>
+    <div class="category" onclick="filterCategory('عروض')">🛒 عروض</div>
+  </div>
+
+  <div id="add" class="section">
+    <h2>أضف إعلانك</h2>
+    <form onsubmit="addProduct(event)">
+      <input type="text" id="title" placeholder="عنوان المنتج" required>
+      <select id="category">
+        <option>عقارات</option>
+        <option>سيارات</option>
+        <option>كمبيوترات</option>
+        <option>ملابس</option>
+        <option>ألعاب</option>
+        <option>إلكترونيات</option>
+        <option>شنط</option>
+        <option>عروض</option>
+      </select>
+      <textarea id="desc" placeholder="وصف المنتج" required></textarea>
+      <input type="text" id="phone" placeholder="رقم التواصل" required>
+      <button type="submit">نشر الإعلان</button>
+    </form>
+  </div>
+
+  <div id="products" class="section">
+    <h2>كل المنتجات</h2>
+    <div class="product-list" id="product-list"></div>
+  </div>
+
+  <div id="contact" class="section">
+    <h2>تواصل معنا</h2>
+    <form>
+      <input type="text" placeholder="اسمك">
+      <input type="email" placeholder="بريدك الإلكتروني">
+      <textarea placeholder="رسالتك"></textarea>
+      <button type="submit">أرسل</button>
+    </form>
+  </div>
 
   <footer>
-    <p>جميع الحقوق محفوظة &copy; ClickGet 2025</p>
+    جميع الحقوق محفوظة © ClickGet 2025
   </footer>
+
+  <script>
+    let products = JSON.parse(localStorage.getItem("products") || "[]");
+
+    function addProduct(e) {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      const category = document.getElementById("category").value;
+      const desc = document.getElementById("desc").value;
+      const phone = document.getElementById("phone").value;
+
+      products.push({ title, category, desc, phone });
+      localStorage.setItem("products", JSON.stringify(products));
+      renderProducts();
+      e.target.reset();
+      alert("تم إضافة المنتج!");
+    }
+
+    function renderProducts(filter = null) {
+      const container = document.getElementById("product-list");
+      container.innerHTML = "";
+      products.filter(p => !filter || p.category === filter).forEach(p => {
+        container.innerHTML += `
+          <div class="product">
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+            <strong>📞 ${p.phone}</strong><br>
+            <span>📦 ${p.category}</span>
+          </div>`;
+      });
+    }
+
+    function filterCategory(cat) {
+      renderProducts(cat);
+      window.scrollTo(0, document.getElementById("products").offsetTop);
+    }
+
+    renderProducts();
+  </script>
 </body>
 </html>

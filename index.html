@@ -358,3 +358,128 @@
   </div>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClickGet | السوق الإلكتروني</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+    header {
+      background: linear-gradient(270deg, #00c6ff, #0072ff);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      animation: animate-bg 8s linear infinite;
+    }
+    @keyframes animate-bg {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #eee;
+      padding: 0.5rem;
+    }
+    nav a {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #fff;
+      color: #333;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background: #0072ff;
+      color: white;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .product-form {
+      display: none;
+      background: white;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .product-form input,
+    .product-form textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .product-form button {
+      background: #0072ff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ClickGet</h1>
+    <p>أفضل موقع للإعلانات المبوبة في الإمارات</p>
+  </header>
+
+  <nav id="categories"></nav>
+
+  <section>
+    <div id="section-content">
+      <p>اختر قسم لعرض المنتجات أو لإضافة إعلانك.</p>
+    </div>
+  </section>
+
+  <script>
+    const categories = [
+      "السيارات", "العقارات", "الجوالات", "الأجهزة", "الأثاث",
+      "الملابس", "الساعات", "الألعاب", "الكمبيوتر", "المطبخ",
+      "الوظائف", "الخدمات", "الحيوانات", "الكتب", "الرياضة",
+      "الدراجات", "التذاكر", "الكاميرات", "الصحة", "أخرى"
+    ];
+
+    const nav = document.getElementById("categories");
+    const section = document.getElementById("section-content");
+
+    categories.forEach(category => {
+      const link = document.createElement("a");
+      link.href = "#";
+      link.textContent = category;
+      link.onclick = () => showForm(category);
+      nav.appendChild(link);
+    });
+
+    function showForm(category) {
+      section.innerHTML = `
+        <h2>${category}</h2>
+        <form class="product-form">
+          <input type="text" placeholder="اسم المنتج" required>
+          <textarea placeholder="وصف المنتج" required></textarea>
+          <input type="number" placeholder="السعر بالدرهم" required>
+          <input type="file" accept="image/*" required>
+          <button type="submit">إضافة المنتج</button>
+        </form>
+      `;
+    }
+  </script>
+</body>
+</html>

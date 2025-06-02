@@ -211,3 +211,150 @@
   </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClickGet | الصفحة الرئيسية</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Tahoma, sans-serif;
+      background: linear-gradient(-45deg, #1f1f1f, #3c3c3c, #2e2e2e, #1f1f1f);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      color: #fff;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    header h1 {
+      font-size: 36px;
+      color: #00d4ff;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+      flex-wrap: wrap;
+    }
+    nav a {
+      padding: 15px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background-color: #00d4ff;
+      color: black;
+    }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      padding: 30px;
+    }
+    .category {
+      background-color: #444;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .category:hover {
+      background-color: #00d4ff;
+      color: black;
+    }
+    .footer {
+      background-color: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+    .add-product {
+      margin: 20px auto;
+      max-width: 600px;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .add-product input, .add-product textarea {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+    }
+    .add-product button {
+      padding: 10px 20px;
+      background-color: #00d4ff;
+      border: none;
+      border-radius: 5px;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ClickGet</h1>
+    <p>منصة إعلانات احترافية في الإمارات</p>
+  </header>
+  <nav>
+    <a href="#">الرئيسية</a>
+    <a href="#add">إضافة منتج</a>
+    <a href="#support">الدعم</a>
+  </nav>
+
+  <section class="categories">
+    <div class="category">ألعاب</div>
+    <div class="category">جوالات</div>
+    <div class="category">سيارات</div>
+    <div class="category">أثاث</div>
+    <div class="category">ملابس</div>
+    <div class="category">أجهزة إلكترونية</div>
+    <div class="category">كمبيوترات</div>
+    <div class="category">عقارات</div>
+    <div class="category">وظائف</div>
+    <div class="category">خدمات</div>
+    <div class="category">دراجات</div>
+    <div class="category">حيوانات</div>
+    <div class="category">ساعات</div>
+    <div class="category">شنط</div>
+    <div class="category">ألعاب أطفال</div>
+    <div class="category">كتب</div>
+    <div class="category">تحف وهدايا</div>
+    <div class="category">كهربائيات</div>
+    <div class="category">زينة سيارات</div>
+    <div class="category">أجهزة رياضية</div>
+  </section>
+
+  <section id="add" class="add-product">
+    <h2>إضافة منتج</h2>
+    <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+      <input type="text" name="title" placeholder="اسم المنتج" required>
+      <textarea name="description" placeholder="وصف المنتج" required></textarea>
+      <input type="number" name="price" placeholder="السعر (بالدرهم)" required>
+      <input type="url" name="image" placeholder="رابط صورة المنتج" required>
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">نشر الإعلان</button>
+    </form>
+  </section>
+
+  <div class="footer">
+    <p>جميع الحقوق محفوظة &copy; ClickGet</p>
+  </div>
+</body>
+</html>

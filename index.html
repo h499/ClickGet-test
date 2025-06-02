@@ -1,148 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClickGet - Classifieds Marketplace</title>
+  <title>قسم الألعاب - ClickGet</title>
   <style>
-    * {
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: sans-serif;
     }
-    body {
-      background: #f8f8f8;
-    }
+
     header {
-      background: linear-gradient(135deg, #009688, #4CAF50);
+      background-color: #3a3a3a;
       color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .section-title {
+      background-color: #fff;
       padding: 20px;
       text-align: center;
-      position: relative;
+      font-size: 24px;
+      font-weight: bold;
+      border-bottom: 2px solid #ccc;
     }
-    header h1 {
-      font-size: 3em;
-      animation: wave 3s infinite alternate;
-    }
-    @keyframes wave {
-      from { transform: rotate(-1deg); }
-      to { transform: rotate(1deg); }
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      background: #fff;
-      padding: 10px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-    nav a {
-      text-decoration: none;
-      color: #333;
-      background: #e0f2f1;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background: #80cbc4;
-      color: white;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+
+    .product-form {
+      background-color: #fff;
+      margin: 20px auto;
       padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
+    .product-form input,
+    .product-form textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .product-form button {
+      background-color: #3a3a3a;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .products-list {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
     .product {
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-      overflow: hidden;
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px #ccc;
     }
+
     .product img {
       width: 100%;
-      height: 150px;
-      object-fit: cover;
+      border-radius: 10px;
     }
-    .product .info {
-      padding: 10px;
-    }
-    .product .info h3 {
-      margin-bottom: 5px;
-    }
-    .product .info p {
-      color: gray;
-      font-size: 14px;
-    }
-    .add-btn {
-      display: inline-block;
-      background: #4CAF50;
-      color: white;
-      padding: 10px 15px;
-      margin: 20px auto;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-    }
+
     footer {
-      background: #004d40;
-      color: white;
       text-align: center;
       padding: 20px;
+      background-color: #222;
+      color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>ClickGet</h1>
-    <p>أفضل موقع للإعلانات المبوبة في الإمارات</p>
-  </header>
 
-  <nav>
-    <a href="#">الألعاب</a>
-    <a href="#">السيارات</a>
-    <a href="#">الجوالات</a>
-    <a href="#">العقارات</a>
-    <a href="#">الأجهزة</a>
-    <a href="#">ملابس</a>
-    <a href="#">أثاث</a>
-    <a href="#">وظائف</a>
-    <a href="#">مستلزمات أطفال</a>
-    <a href="#">خدمات</a>
-    <a href="#">مطبخ</a>
-    <a href="#">حيوانات</a>
-    <a href="#">موسيقى</a>
-    <a href="#">إلكترونيات</a>
-    <a href="#">رياضة</a>
-    <a href="#">كتب</a>
-    <a href="#">مستلزمات نسائية</a>
-    <a href="#">إكسسوارات</a>
-    <a href="#">تصوير</a>
-    <a href="#">دراجات</a>
-  </nav>
+<header>
+  <h1>ClickGet - قسم الألعاب</h1>
+</header>
 
-  <div class="products" id="product-list">
-    <!-- Example Product -->
-    <div class="product">
-      <img src="https://via.placeholder.com/300x150" alt="منتج">
-      <div class="info">
-        <h3>PS5 للبيع</h3>
-        <p>سعر: 2000 درهم</p>
-        <p>جديد بالكرتونة</p>
+<div class="section-title">أضف إعلانك هنا</div>
+
+<form class="product-form" onsubmit="event.preventDefault(); addProduct();">
+  <input type="text" id="title" placeholder="عنوان المنتج" required />
+  <input type="number" id="price" placeholder="السعر (درهم)" required />
+  <input type="file" id="image" accept="image/*" required />
+  <textarea id="desc" placeholder="وصف المنتج" rows="4" required></textarea>
+  <button type="submit">أضف الإعلان</button>
+</form>
+
+<div class="products-list" id="products"></div>
+
+<footer>جميع الحقوق محفوظة © ClickGet</footer>
+
+<script>
+  function addProduct() {
+    const title = document.getElementById('title').value;
+    const price = document.getElementById('price').value;
+    const desc = document.getElementById('desc').value;
+    const imageInput = document.getElementById('image');
+    const image = URL.createObjectURL(imageInput.files[0]);
+
+    const productHTML = `
+      <div class="product">
+        <img src="${image}" alt="صورة المنتج" />
+        <h3>${title}</h3>
+        <p><strong>السعر:</strong> ${price} درهم</p>
+        <p>${desc}</p>
       </div>
-    </div>
-  </div>
+    `;
 
-  <a href="#" class="add-btn" onclick="alert('اذهب لقسم المنتج لإضافة إعلانك')">أضف إعلان</a>
+    document.getElementById('products').innerHTML += productHTML;
 
-  <footer>
-    <p>© 2025 ClickGet - جميع الحقوق محفوظة</p>
-    <p><a href="#" style="color:#b2dfdb" onclick="alert('للدعم راسلنا عبر النموذج وسنرد عليك')">الدعم الفني</a></p>
-  </footer>
+    // تنظيف الفورم
+    imageInput.value = "";
+    document.getElementById('title').value = "";
+    document.getElementById('price').value = "";
+    document.getElementById('desc').value = "";
+  }
+</script>
+
 </body>
 </html>

@@ -3,140 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>حراج - ClickGet</title>
+  <title>ClickGet - السوق المفتوح</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #004b8d;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    nav {
-      background-color: #003366;
-      color: white;
-      padding: 10px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 5px;
-    }
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 10px;
-      padding: 10px;
-    }
-    .category {
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      text-align: center;
-      padding: 15px;
-      font-weight: bold;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      margin-top: 30px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      margin: auto;
-      padding: 20px;
-      background: white;
-      border-radius: 10px;
-    }
-    input, textarea {
-      margin: 10px 0;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      background-color: #004b8d;
-      color: white;
-      padding: 10px;
-      font-size: 18px;
-      border: none;
-      cursor: pointer;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+    header { background-color: #3a3a3a; color: white; padding: 15px; text-align: center; }
+    nav { background-color: #222; display: flex; flex-wrap: wrap; justify-content: center; }
+    nav a { color: white; padding: 14px 20px; text-decoration: none; display: block; }
+    nav a:hover { background-color: #444; }
+    .content { padding: 20px; }
+    .section { background: white; padding: 15px; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 0 5px #ccc; }
+    .section h2 { margin-top: 0; }
+    .add-form { display: none; margin-top: 10px; }
+    .add-form input, .add-form textarea { display: block; width: 100%; margin-bottom: 10px; padding: 8px; }
+    .add-form button { background: #3a3a3a; color: white; padding: 10px; border: none; cursor: pointer; }
+    footer { background-color: #222; color: white; text-align: center; padding: 15px; margin-top: 20px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>ClickGet - موقع الحراج</h1>
+    <h1>ClickGet - السوق المفتوح</h1>
+    <p>أفضل مكان لبيع وشراء المنتجات في الإمارات</p>
   </header>
 
   <nav>
     <a href="#">الرئيسية</a>
-    <a href="#add">إضافة إعلان</a>
+    <a href="#toys">ألعاب</a>
+    <a href="#electronics">إلكترونيات</a>
+    <a href="#cars">سيارات</a>
+    <a href="#realestate">عقارات</a>
+    <a href="#fashion">أزياء</a>
     <a href="#contact">تواصل معنا</a>
   </nav>
 
-  <section class="categories">
-    <div class="category">سيارات</div>
-    <div class="category">جوالات</div>
-    <div class="category">ألعاب</div>
-    <div class="category">أثاث</div>
-    <div class="category">الكترونيات</div>
-    <div class="category">ملابس</div>
-    <div class="category">أجهزة</div>
-    <div class="category">عقارات</div>
-    <div class="category">خدمات</div>
-    <div class="category">مواشي</div>
-    <div class="category">وظائف</div>
-    <div class="category">ساعات</div>
-    <div class="category">كمبيوترات</div>
-    <div class="category">مستلزمات أطفال</div>
-    <div class="category">مستلزمات مطاعم</div>
-    <div class="category">معدات صناعية</div>
-    <div class="category">دراجات نارية</div>
-    <div class="category">مستلزمات رياضية</div>
-    <div class="category">كتب وأدوات مدرسية</div>
-    <div class="category">أخرى</div>
-  </section>
+  <div class="content">
+    <div class="section" id="toys">
+      <h2>ألعاب</h2>
+      <img src="https://via.placeholder.com/150" alt="ألعاب">
+      <button onclick="toggleForm('form-toys')">+ إضافة إعلان</button>
+      <div class="add-form" id="form-toys">
+        <input type="text" placeholder="عنوان الإعلان">
+        <textarea placeholder="وصف الإعلان"></textarea>
+        <input type="file">
+        <button>نشر الإعلان</button>
+      </div>
+    </div>
 
-  <section id="add">
-    <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
-      <h2>أضف إعلانك</h2>
-      <input type="text" name="name" placeholder="الاسم" required>
-      <input type="text" name="product" placeholder="اسم المنتج" required>
-      <input type="text" name="category" placeholder="القسم" required>
-      <textarea name="details" placeholder="تفاصيل المنتج" required></textarea>
-      <input type="hidden" name="_captcha" value="false">
-      <button type="submit">إرسال</button>
-    </form>
-  </section>
+    <div class="section" id="electronics">
+      <h2>إلكترونيات</h2>
+      <img src="https://via.placeholder.com/150" alt="إلكترونيات">
+      <button onclick="toggleForm('form-electronics')">+ إضافة إعلان</button>
+      <div class="add-form" id="form-electronics">
+        <input type="text" placeholder="عنوان الإعلان">
+        <textarea placeholder="وصف الإعلان"></textarea>
+        <input type="file">
+        <button>نشر الإعلان</button>
+      </div>
+    </div>
 
-  <section id="contact">
-    <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+    <!-- المزيد من الأقسام بنفس الشكل -->
+
+    <div class="section" id="contact">
       <h2>تواصل معنا</h2>
-      <input type="text" name="name" placeholder="اسمك" required>
-      <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
-      <textarea name="message" placeholder="اكتب رسالتك هنا" required></textarea>
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <button type="submit">إرسال</button>
-    </form>
-  </section>
+      <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" placeholder="اسمك" required>
+        <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+        <textarea name="message" placeholder="رسالتك" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </div>
 
   <footer>
-    <p>جميع الحقوق محفوظة &copy; ClickGet 2025</p>
+    جميع الحقوق محفوظة &copy; ClickGet 2025
   </footer>
+
+  <script>
+    function toggleForm(id) {
+      const form = document.getElementById(id);
+      form.style.display = form.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
 </body>
 </html>

@@ -3,186 +3,140 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClickGet - المنصة الأفضل للإعلانات في الإمارات</title>
+  <title>حراج - ClickGet</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f1f1f1;
-      color: #333;
+      padding: 0;
     }
     header {
-      background: #0d1b2a;
-      color: #fff;
+      background-color: #004b8d;
+      color: white;
+      padding: 15px;
       text-align: center;
-      padding: 20px 10px;
     }
     nav {
-      background: #1b263b;
+      background-color: #003366;
+      color: white;
       padding: 10px;
       display: flex;
-      justify-content: center;
-      gap: 20px;
+      justify-content: space-around;
+      flex-wrap: wrap;
     }
     nav a {
       color: white;
       text-decoration: none;
-    }
-    .section {
-      padding: 20px;
-      text-align: center;
+      margin: 5px;
     }
     .categories {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+      padding: 10px;
     }
     .category {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      width: 150px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      cursor: pointer;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
     }
     footer {
-      background: #0d1b2a;
+      background-color: #003366;
       color: white;
+      padding: 20px;
       text-align: center;
-      padding: 10px;
-    }
-    input, textarea, select, button {
-      padding: 10px;
-      width: 100%;
-      margin-top: 10px;
+      margin-top: 30px;
     }
     form {
-      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
       margin: auto;
-      background: white;
       padding: 20px;
+      background: white;
       border-radius: 10px;
     }
-    .product-list {
-      max-width: 800px;
-      margin: auto;
+    input, textarea {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
-    .product {
-      background: #fff;
-      margin: 10px;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    button {
+      background-color: #004b8d;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>ClickGet - المنصة الأفضل للإعلانات في الإمارات</h1>
-    <p>بيع واشتري أي شي بسهولة وأمان</p>
+    <h1>ClickGet - موقع الحراج</h1>
   </header>
 
   <nav>
     <a href="#">الرئيسية</a>
-    <a href="#add">أضف إعلان</a>
-    <a href="#products">جميع المنتجات</a>
+    <a href="#add">إضافة إعلان</a>
     <a href="#contact">تواصل معنا</a>
   </nav>
 
-  <div class="section">
-    <h2>ابحث عن المنتجات اللي تحتاجها</h2>
-    <p>كل الأقسام - كل الإمارات - أسعار مميزة</p>
-  </div>
+  <section class="categories">
+    <div class="category">سيارات</div>
+    <div class="category">جوالات</div>
+    <div class="category">ألعاب</div>
+    <div class="category">أثاث</div>
+    <div class="category">الكترونيات</div>
+    <div class="category">ملابس</div>
+    <div class="category">أجهزة</div>
+    <div class="category">عقارات</div>
+    <div class="category">خدمات</div>
+    <div class="category">مواشي</div>
+    <div class="category">وظائف</div>
+    <div class="category">ساعات</div>
+    <div class="category">كمبيوترات</div>
+    <div class="category">مستلزمات أطفال</div>
+    <div class="category">مستلزمات مطاعم</div>
+    <div class="category">معدات صناعية</div>
+    <div class="category">دراجات نارية</div>
+    <div class="category">مستلزمات رياضية</div>
+    <div class="category">كتب وأدوات مدرسية</div>
+    <div class="category">أخرى</div>
+  </section>
 
-  <div class="categories">
-    <div class="category" onclick="filterCategory('عقارات')">🏡 عقارات</div>
-    <div class="category" onclick="filterCategory('سيارات')">🚗 سيارات</div>
-    <div class="category" onclick="filterCategory('كمبيوترات')">💻 كمبيوترات</div>
-    <div class="category" onclick="filterCategory('ملابس')">👗 ملابس</div>
-    <div class="category" onclick="filterCategory('ألعاب')">🎮 ألعاب</div>
-    <div class="category" onclick="filterCategory('إلكترونيات')">📱 إلكترونيات</div>
-    <div class="category" onclick="filterCategory('شنط')">🔒 شنط</div>
-    <div class="category" onclick="filterCategory('عروض')">🛒 عروض</div>
-  </div>
-
-  <div id="add" class="section">
-    <h2>أضف إعلانك</h2>
-    <form onsubmit="addProduct(event)">
-      <input type="text" id="title" placeholder="عنوان المنتج" required>
-      <select id="category">
-        <option>عقارات</option>
-        <option>سيارات</option>
-        <option>كمبيوترات</option>
-        <option>ملابس</option>
-        <option>ألعاب</option>
-        <option>إلكترونيات</option>
-        <option>شنط</option>
-        <option>عروض</option>
-      </select>
-      <textarea id="desc" placeholder="وصف المنتج" required></textarea>
-      <input type="text" id="phone" placeholder="رقم التواصل" required>
-      <button type="submit">نشر الإعلان</button>
+  <section id="add">
+    <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+      <h2>أضف إعلانك</h2>
+      <input type="text" name="name" placeholder="الاسم" required>
+      <input type="text" name="product" placeholder="اسم المنتج" required>
+      <input type="text" name="category" placeholder="القسم" required>
+      <textarea name="details" placeholder="تفاصيل المنتج" required></textarea>
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">إرسال</button>
     </form>
-  </div>
+  </section>
 
-  <div id="products" class="section">
-    <h2>كل المنتجات</h2>
-    <div class="product-list" id="product-list"></div>
-  </div>
-
-  <div id="contact" class="section">
-    <h2>تواصل معنا</h2>
-    <form>
-      <input type="text" placeholder="اسمك">
-      <input type="email" placeholder="بريدك الإلكتروني">
-      <textarea placeholder="رسالتك"></textarea>
-      <button type="submit">أرسل</button>
+  <section id="contact">
+    <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+      <h2>تواصل معنا</h2>
+      <input type="text" name="name" placeholder="اسمك" required>
+      <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
+      <textarea name="message" placeholder="اكتب رسالتك هنا" required></textarea>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <button type="submit">إرسال</button>
     </form>
-  </div>
+  </section>
 
   <footer>
-    جميع الحقوق محفوظة © ClickGet 2025
+    <p>جميع الحقوق محفوظة &copy; ClickGet 2025</p>
   </footer>
-
-  <script>
-    let products = JSON.parse(localStorage.getItem("products") || "[]");
-
-    function addProduct(e) {
-      e.preventDefault();
-      const title = document.getElementById("title").value;
-      const category = document.getElementById("category").value;
-      const desc = document.getElementById("desc").value;
-      const phone = document.getElementById("phone").value;
-
-      products.push({ title, category, desc, phone });
-      localStorage.setItem("products", JSON.stringify(products));
-      renderProducts();
-      e.target.reset();
-      alert("تم إضافة المنتج!");
-    }
-
-    function renderProducts(filter = null) {
-      const container = document.getElementById("product-list");
-      container.innerHTML = "";
-      products.filter(p => !filter || p.category === filter).forEach(p => {
-        container.innerHTML += `
-          <div class="product">
-            <h3>${p.title}</h3>
-            <p>${p.desc}</p>
-            <strong>📞 ${p.phone}</strong><br>
-            <span>📦 ${p.category}</span>
-          </div>`;
-      });
-    }
-
-    function filterCategory(cat) {
-      renderProducts(cat);
-      window.scrollTo(0, document.getElementById("products").offsetTop);
-    }
-
-    renderProducts();
-  </script>
 </body>
 </html>

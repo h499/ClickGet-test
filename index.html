@@ -3,483 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClickGet - الصفحة الرئيسية</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(270deg, #e0e0e0, #ffffff);
-      animation: backgroundShift 10s infinite alternate;
-    }
-
-    @keyframes backgroundShift {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-
-    header {
-      background-color: #222;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 48px;
-      background: linear-gradient(90deg, #00bcd4, #4caf50);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: colorShift 5s linear infinite;
-    }
-
-    @keyframes colorShift {
-      0% { filter: hue-rotate(0deg); }
-      100% { filter: hue-rotate(360deg); }
-    }
-
-    .sections {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      padding: 30px;
-    }
-
-    .section {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 20px;
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-
-    .section:hover {
-      transform: scale(1.05);
-    }
-
-    .section img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>ClickGet</h1>
-    <p>أهلاً بك في سوق الإمارات الإلكتروني - أقسام متنوعة وأسلوب احترافي</p>
-  </header>
-
-  <section class="sections">
-    <div class="section" onclick="location.href='games.html';">
-      <img src="https://cdn-icons-png.flaticon.com/512/3069/3069174.png" alt="ألعاب">
-      <h3>الألعاب</h3>
-    </div>
-    <div class="section" onclick="location.href='phones.html';">
-      <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="جوالات">
-      <h3>جوالات</h3>
-    </div>
-    <div class="section" onclick="location.href='cars.html';">
-      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="سيارات">
-      <h3>سيارات</h3>
-    </div>
-    <!-- أضف باقي الأقسام الـ 17 بنفس الشكل لاحقًا -->
-  </section>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClickGet | الصفحة الرئيسية</title>
+  <title>ClickGet | كليك جت</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
-
     body {
-      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: #fff;
-      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2;
+      color: #333;
     }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     header {
+      background: linear-gradient(45deg, #555, #999);
+      padding: 30px;
       text-align: center;
-      padding: 50px 20px 20px;
+      color: white;
+      position: relative;
     }
-
-    header h1 {
-      font-size: 48px;
-      background: linear-gradient(90deg, #00d2ff, #3a47d5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeInDown 1s ease;
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      animation: animateBg 5s infinite linear;
     }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes animateBg {
+      0% { text-shadow: 0 0 5px #ccc; }
+      50% { text-shadow: 0 0 20px #fff; }
+      100% { text-shadow: 0 0 5px #ccc; }
     }
-
-    .categories {
+    nav {
+      background: #eee;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      padding: 40px 20px;
-      gap: 30px;
+      flex-wrap: wrap;
+      padding: 10px;
     }
-
+    nav a {
+      margin: 5px 10px;
+      text-decoration: none;
+      color: #444;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #000;
+    }
+    main {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
     .category {
-      background: #ffffff10;
-      border: 1px solid #ffffff22;
-      border-radius: 16px;
-      padding: 20px;
-      width: 260px;
-      height: 220px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
-      cursor: pointer;
-      transition: transform 0.3s, background 0.3s;
+      transition: 0.3s;
     }
-
     .category:hover {
-      transform: scale(1.05);
-      background: #ffffff20;
+      transform: scale(1.03);
     }
-
-    .category img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 20px;
-    }
-
-    .category h3 {
-      font-size: 20px;
-      color: #fff;
-    }
-
     footer {
-      text-align: center;
+      background: #444;
+      color: white;
       padding: 20px;
-      background: #111;
-      color: #aaa;
-      font-size: 14px;
+      text-align: center;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>ClickGet</h1>
+    <div class="logo">ClickGet</div>
   </header>
-
-  <section class="categories">
-    <a class="category" href="games.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="ألعاب">
-      <h3>ألعاب</h3>
-    </a>
-    <a class="category" href="phones.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/727/727399.png" alt="جوالات">
-      <h3>جوالات</h3>
-    </a>
-    <a class="category" href="cars.html">
-      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="سيارات">
-      <h3>سيارات</h3>
-    </a>
-  </section>
-
+  <nav>
+    <a href="#">العاب</a>
+    <a href="#">سيارات</a>
+    <a href="#">جوالات</a>
+    <a href="#">أجهزة منزلية</a>
+    <a href="#">ملابس</a>
+    <a href="#">عقارات</a>
+    <a href="#">الكترونيات</a>
+    <a href="#">خدمات</a>
+    <a href="#">وظائف</a>
+    <a href="#">حيوانات</a>
+    <a href="#">أثاث</a>
+    <a href="#">ألعاب أطفال</a>
+    <a href="#">كتب</a>
+    <a href="#">معدات</a>
+    <a href="#">ساعات</a>
+    <a href="#">دراجات</a>
+    <a href="#">كمبيوترات</a>
+    <a href="#">معدات طبية</a>
+    <a href="#">مطاعم</a>
+    <a href="#">مناسبات</a>
+  </nav>
+  <main>
+    <div class="category">قسم الألعاب</div>
+    <div class="category">قسم السيارات</div>
+    <div class="category">قسم الجوالات</div>
+    <div class="category">قسم الأجهزة المنزلية</div>
+    <div class="category">قسم الملابس</div>
+    <div class="category">قسم العقارات</div>
+    <div class="category">قسم الالكترونيات</div>
+    <div class="category">قسم الخدمات</div>
+    <div class="category">قسم الوظائف</div>
+    <div class="category">قسم الحيوانات</div>
+    <!-- أضف باقي الأقسام حسب الطلب لاحقاً -->
+  </main>
   <footer>
     &copy; 2025 ClickGet - جميع الحقوق محفوظة
   </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClickGet | الصفحة الرئيسية</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Tahoma, sans-serif;
-      background: linear-gradient(-45deg, #1f1f1f, #3c3c3c, #2e2e2e, #1f1f1f);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-      color: #fff;
-    }
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-    header {
-      padding: 20px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.7);
-    }
-    header h1 {
-      font-size: 36px;
-      color: #00d4ff;
-      margin: 0;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #222;
-      flex-wrap: wrap;
-    }
-    nav a {
-      padding: 15px;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-    }
-    nav a:hover {
-      background-color: #00d4ff;
-      color: black;
-    }
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-      padding: 30px;
-    }
-    .category {
-      background-color: #444;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      transition: 0.3s;
-    }
-    .category:hover {
-      background-color: #00d4ff;
-      color: black;
-    }
-    .footer {
-      background-color: #111;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-    .add-product {
-      margin: 20px auto;
-      max-width: 600px;
-      background-color: #333;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .add-product input, .add-product textarea {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-    }
-    .add-product button {
-      padding: 10px 20px;
-      background-color: #00d4ff;
-      border: none;
-      border-radius: 5px;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>ClickGet</h1>
-    <p>منصة إعلانات احترافية في الإمارات</p>
-  </header>
-  <nav>
-    <a href="#">الرئيسية</a>
-    <a href="#add">إضافة منتج</a>
-    <a href="#support">الدعم</a>
-  </nav>
-
-  <section class="categories">
-    <div class="category">ألعاب</div>
-    <div class="category">جوالات</div>
-    <div class="category">سيارات</div>
-    <div class="category">أثاث</div>
-    <div class="category">ملابس</div>
-    <div class="category">أجهزة إلكترونية</div>
-    <div class="category">كمبيوترات</div>
-    <div class="category">عقارات</div>
-    <div class="category">وظائف</div>
-    <div class="category">خدمات</div>
-    <div class="category">دراجات</div>
-    <div class="category">حيوانات</div>
-    <div class="category">ساعات</div>
-    <div class="category">شنط</div>
-    <div class="category">ألعاب أطفال</div>
-    <div class="category">كتب</div>
-    <div class="category">تحف وهدايا</div>
-    <div class="category">كهربائيات</div>
-    <div class="category">زينة سيارات</div>
-    <div class="category">أجهزة رياضية</div>
-  </section>
-
-  <section id="add" class="add-product">
-    <h2>إضافة منتج</h2>
-    <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
-      <input type="text" name="title" placeholder="اسم المنتج" required>
-      <textarea name="description" placeholder="وصف المنتج" required></textarea>
-      <input type="number" name="price" placeholder="السعر (بالدرهم)" required>
-      <input type="url" name="image" placeholder="رابط صورة المنتج" required>
-      <input type="hidden" name="_template" value="box">
-      <input type="hidden" name="_captcha" value="false">
-      <button type="submit">نشر الإعلان</button>
-    </form>
-  </section>
-
-  <div class="footer">
-    <p>جميع الحقوق محفوظة &copy; ClickGet</p>
-  </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClickGet | السوق الإلكتروني</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      background: #f5f5f5;
-    }
-    header {
-      background: linear-gradient(270deg, #00c6ff, #0072ff);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      animation: animate-bg 8s linear infinite;
-    }
-    @keyframes animate-bg {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      background: #eee;
-      padding: 0.5rem;
-    }
-    nav a {
-      margin: 0.5rem;
-      padding: 0.5rem 1rem;
-      background: #fff;
-      color: #333;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background: #0072ff;
-      color: white;
-    }
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .product-form {
-      display: none;
-      background: white;
-      padding: 1rem;
-      margin-top: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .product-form input,
-    .product-form textarea {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .product-form button {
-      background: #0072ff;
-      color: white;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>ClickGet</h1>
-    <p>أفضل موقع للإعلانات المبوبة في الإمارات</p>
-  </header>
-
-  <nav id="categories"></nav>
-
-  <section>
-    <div id="section-content">
-      <p>اختر قسم لعرض المنتجات أو لإضافة إعلانك.</p>
-    </div>
-  </section>
-
-  <script>
-    const categories = [
-      "السيارات", "العقارات", "الجوالات", "الأجهزة", "الأثاث",
-      "الملابس", "الساعات", "الألعاب", "الكمبيوتر", "المطبخ",
-      "الوظائف", "الخدمات", "الحيوانات", "الكتب", "الرياضة",
-      "الدراجات", "التذاكر", "الكاميرات", "الصحة", "أخرى"
-    ];
-
-    const nav = document.getElementById("categories");
-    const section = document.getElementById("section-content");
-
-    categories.forEach(category => {
-      const link = document.createElement("a");
-      link.href = "#";
-      link.textContent = category;
-      link.onclick = () => showForm(category);
-      nav.appendChild(link);
-    });
-
-    function showForm(category) {
-      section.innerHTML = `
-        <h2>${category}</h2>
-        <form class="product-form">
-          <input type="text" placeholder="اسم المنتج" required>
-          <textarea placeholder="وصف المنتج" required></textarea>
-          <input type="number" placeholder="السعر بالدرهم" required>
-          <input type="file" accept="image/*" required>
-          <button type="submit">إضافة المنتج</button>
-        </form>
-      `;
-    }
-  </script>
 </body>
 </html>

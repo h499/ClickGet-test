@@ -89,3 +89,125 @@
   </section>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClickGet | الصفحة الرئيسية</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      background: linear-gradient(90deg, #00d2ff, #3a47d5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInDown 1s ease;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 30px;
+    }
+
+    .category {
+      background: #ffffff10;
+      border: 1px solid #ffffff22;
+      border-radius: 16px;
+      padding: 20px;
+      width: 260px;
+      height: 220px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+      background: #ffffff20;
+    }
+
+    .category img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+    }
+
+    .category h3 {
+      font-size: 20px;
+      color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ClickGet</h1>
+  </header>
+
+  <section class="categories">
+    <a class="category" href="games.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/1055/1055646.png" alt="ألعاب">
+      <h3>ألعاب</h3>
+    </a>
+    <a class="category" href="phones.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/727/727399.png" alt="جوالات">
+      <h3>جوالات</h3>
+    </a>
+    <a class="category" href="cars.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="سيارات">
+      <h3>سيارات</h3>
+    </a>
+  </section>
+
+  <footer>
+    &copy; 2025 ClickGet - جميع الحقوق محفوظة
+  </footer>
+</body>
+</html>

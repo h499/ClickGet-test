@@ -1,88 +1,158 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClickGet - السوق المفتوح</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClickGet - منصة للإعلانات المبوبة</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-    header { background-color: #3a3a3a; color: white; padding: 15px; text-align: center; }
-    nav { background-color: #222; display: flex; flex-wrap: wrap; justify-content: center; }
-    nav a { color: white; padding: 14px 20px; text-decoration: none; display: block; }
-    nav a:hover { background-color: #444; }
-    .content { padding: 20px; }
-    .section { background: white; padding: 15px; margin-bottom: 10px; border-radius: 10px; box-shadow: 0 0 5px #ccc; }
-    .section h2 { margin-top: 0; }
-    .add-form { display: none; margin-top: 10px; }
-    .add-form input, .add-form textarea { display: block; width: 100%; margin-bottom: 10px; padding: 8px; }
-    .add-form button { background: #3a3a3a; color: white; padding: 10px; border: none; cursor: pointer; }
-    footer { background-color: #222; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+    body {
+      font-family: Tahoma, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #333;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 5px 10px;
+      text-decoration: none;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .ad {
+      background: white;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .ad img {
+      max-width: 100%;
+      border-radius: 6px;
+    }
+    .ad h3 {
+      margin: 10px 0 5px;
+    }
+    .ad p {
+      margin: 5px 0;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 40px;
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      background: #1e1e2f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    footer {
+      background: #1e1e2f;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-top: 50px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>ClickGet - السوق المفتوح</h1>
-    <p>أفضل مكان لبيع وشراء المنتجات في الإمارات</p>
+    <h1>ClickGet</h1>
+    <p>أفضل منصة لعرض وشراء المنتجات في الإمارات</p>
   </header>
 
   <nav>
-    <a href="#">الرئيسية</a>
-    <a href="#toys">ألعاب</a>
-    <a href="#electronics">إلكترونيات</a>
-    <a href="#cars">سيارات</a>
-    <a href="#realestate">عقارات</a>
-    <a href="#fashion">أزياء</a>
-    <a href="#contact">تواصل معنا</a>
+    <a href="#">الكل</a>
+    <a href="#">ألعاب</a>
+    <a href="#">جوالات</a>
+    <a href="#">سيارات</a>
+    <a href="#">الكترونيات</a>
+    <a href="#">ملابس</a>
+    <a href="#">أثاث</a>
+    <a href="#">عقارات</a>
+    <a href="#">أجهزة كمبيوتر</a>
+    <a href="#">وظائف</a>
+    <a href="#">خدمات</a>
+    <a href="#">كتب</a>
+    <a href="#">ساعات</a>
+    <a href="#">مستلزمات أطفال</a>
+    <a href="#">حيوانات</a>
+    <a href="#">مستلزمات رياضية</a>
+    <a href="#">دراجات</a>
+    <a href="#">تجميل</a>
+    <a href="#">أطعمة</a>
+    <a href="#">أخرى</a>
   </nav>
 
-  <div class="content">
-    <div class="section" id="toys">
-      <h2>ألعاب</h2>
-      <img src="https://via.placeholder.com/150" alt="ألعاب">
-      <button onclick="toggleForm('form-toys')">+ إضافة إعلان</button>
-      <div class="add-form" id="form-toys">
-        <input type="text" placeholder="عنوان الإعلان">
-        <textarea placeholder="وصف الإعلان"></textarea>
-        <input type="file">
-        <button>نشر الإعلان</button>
-      </div>
+  <div class="container">
+    <div class="ad">
+      <img src="https://via.placeholder.com/400x200" alt="صورة المنتج">
+      <h3>عنوان المنتج</h3>
+      <p>الوصف الكامل للمنتج المعروض</p>
+      <p><strong>السعر:</strong> 200 درهم</p>
     </div>
 
-    <div class="section" id="electronics">
-      <h2>إلكترونيات</h2>
-      <img src="https://via.placeholder.com/150" alt="إلكترونيات">
-      <button onclick="toggleForm('form-electronics')">+ إضافة إعلان</button>
-      <div class="add-form" id="form-electronics">
-        <input type="text" placeholder="عنوان الإعلان">
-        <textarea placeholder="وصف الإعلان"></textarea>
-        <input type="file">
-        <button>نشر الإعلان</button>
-      </div>
-    </div>
-
-    <!-- المزيد من الأقسام بنفس الشكل -->
-
-    <div class="section" id="contact">
-      <h2>تواصل معنا</h2>
-      <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="اسمك" required>
-        <input type="email" name="email" placeholder="بريدك الإلكتروني" required>
-        <textarea name="message" placeholder="رسالتك" required></textarea>
-        <button type="submit">إرسال</button>
-      </form>
-    </div>
+    <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+      <h2>أضف إعلان جديد</h2>
+      <input type="text" name="title" placeholder="عنوان المنتج" required>
+      <textarea name="description" placeholder="وصف المنتج" required></textarea>
+      <input type="number" name="price" placeholder="السعر بالدرهم" required>
+      <input type="url" name="image" placeholder="رابط صورة المنتج">
+      <select name="category" required>
+        <option value="ألعاب">ألعاب</option>
+        <option value="جوالات">جوالات</option>
+        <option value="سيارات">سيارات</option>
+        <option value="الكترونيات">الكترونيات</option>
+        <option value="ملابس">ملابس</option>
+        <option value="أثاث">أثاث</option>
+        <option value="عقارات">عقارات</option>
+        <option value="أجهزة كمبيوتر">أجهزة كمبيوتر</option>
+        <option value="وظائف">وظائف</option>
+        <option value="خدمات">خدمات</option>
+        <option value="كتب">كتب</option>
+        <option value="ساعات">ساعات</option>
+        <option value="مستلزمات أطفال">مستلزمات أطفال</option>
+        <option value="حيوانات">حيوانات</option>
+        <option value="مستلزمات رياضية">مستلزمات رياضية</option>
+        <option value="دراجات">دراجات</option>
+        <option value="تجميل">تجميل</option>
+        <option value="أطعمة">أطعمة</option>
+        <option value="أخرى">أخرى</option>
+      </select>
+      <button type="submit">نشر الإعلان</button>
+      <input type="hidden" name="_captcha" value="false">
+    </form>
   </div>
 
   <footer>
-    جميع الحقوق محفوظة &copy; ClickGet 2025
+    <p>© 2025 ClickGet. جميع الحقوق محفوظة.</p>
   </footer>
-
-  <script>
-    function toggleForm(id) {
-      const form = document.getElementById(id);
-      form.style.display = form.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
 </body>
 </html>

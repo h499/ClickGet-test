@@ -1,136 +1,91 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>قسم الألعاب - ClickGet</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClickGet - الصفحة الرئيسية</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(270deg, #e0e0e0, #ffffff);
+      animation: backgroundShift 10s infinite alternate;
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
 
     header {
-      background-color: #3a3a3a;
-      color: white;
-      padding: 15px;
+      background-color: #222;
+      color: #fff;
+      padding: 20px;
       text-align: center;
     }
 
-    .section-title {
-      background-color: #fff;
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      border-bottom: 2px solid #ccc;
+    header h1 {
+      font-size: 48px;
+      background: linear-gradient(90deg, #00bcd4, #4caf50);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: colorShift 5s linear infinite;
     }
 
-    .product-form {
+    @keyframes colorShift {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+
+    .section {
       background-color: #fff;
-      margin: 20px auto;
-      padding: 20px;
       border-radius: 10px;
-      width: 90%;
-      max-width: 500px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .product-form input,
-    .product-form textarea {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .product-form button {
-      background-color: #3a3a3a;
-      color: white;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      border-radius: 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
       cursor: pointer;
     }
 
-    .products-list {
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    .section:hover {
+      transform: scale(1.05);
     }
 
-    .product {
-      background-color: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 5px #ccc;
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #222;
-      color: white;
-      margin-top: 40px;
+    .section img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>ClickGet</h1>
+    <p>أهلاً بك في سوق الإمارات الإلكتروني - أقسام متنوعة وأسلوب احترافي</p>
+  </header>
 
-<header>
-  <h1>ClickGet - قسم الألعاب</h1>
-</header>
-
-<div class="section-title">أضف إعلانك هنا</div>
-
-<form class="product-form" onsubmit="event.preventDefault(); addProduct();">
-  <input type="text" id="title" placeholder="عنوان المنتج" required />
-  <input type="number" id="price" placeholder="السعر (درهم)" required />
-  <input type="file" id="image" accept="image/*" required />
-  <textarea id="desc" placeholder="وصف المنتج" rows="4" required></textarea>
-  <button type="submit">أضف الإعلان</button>
-</form>
-
-<div class="products-list" id="products"></div>
-
-<footer>جميع الحقوق محفوظة © ClickGet</footer>
-
-<script>
-  function addProduct() {
-    const title = document.getElementById('title').value;
-    const price = document.getElementById('price').value;
-    const desc = document.getElementById('desc').value;
-    const imageInput = document.getElementById('image');
-    const image = URL.createObjectURL(imageInput.files[0]);
-
-    const productHTML = `
-      <div class="product">
-        <img src="${image}" alt="صورة المنتج" />
-        <h3>${title}</h3>
-        <p><strong>السعر:</strong> ${price} درهم</p>
-        <p>${desc}</p>
-      </div>
-    `;
-
-    document.getElementById('products').innerHTML += productHTML;
-
-    // تنظيف الفورم
-    imageInput.value = "";
-    document.getElementById('title').value = "";
-    document.getElementById('price').value = "";
-    document.getElementById('desc').value = "";
-  }
-</script>
-
+  <section class="sections">
+    <div class="section" onclick="location.href='games.html';">
+      <img src="https://cdn-icons-png.flaticon.com/512/3069/3069174.png" alt="ألعاب">
+      <h3>الألعاب</h3>
+    </div>
+    <div class="section" onclick="location.href='phones.html';">
+      <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="جوالات">
+      <h3>جوالات</h3>
+    </div>
+    <div class="section" onclick="location.href='cars.html';">
+      <img src="https://cdn-icons-png.flaticon.com/512/743/743007.png" alt="سيارات">
+      <h3>سيارات</h3>
+    </div>
+    <!-- أضف باقي الأقسام الـ 17 بنفس الشكل لاحقًا -->
+  </section>
 </body>
 </html>

@@ -745,3 +745,117 @@ body {
   background-color: #eee;
 }
 </style>
+<script>
+document.getElementById("productImage").addEventListener("change", function(event) {
+  const file = event.target.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById("productPreview").innerHTML = `
+        <p>معاينة الصورة:</p>
+        <img src="${e.target.result}" alt="صورة المنتج" style="max-width: 200px; border-radius: 8px;">
+      `;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+</script>
+<!-- متابعة بناء الموقع الاحترافي مثل موقع حراج -->
+
+<!-- شيفرة نظام الدردشة المباشرة مع الدعم -->
+<div id="support-chat" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+  <button onclick="toggleSupportChat()">دعم فني</button>
+  <div id="chatBox" style="display:none; background: #fff; padding: 10px; border: 1px solid #ccc; width: 300px;">
+    <div id="chatMessages" style="height: 200px; overflow-y: scroll;"></div>
+    <input type="text" id="chatInput" placeholder="اكتب رسالتك...">
+    <button onclick="sendChatMessage()">إرسال</button>
+  </div>
+</div>
+
+<script>
+function toggleSupportChat() {
+  const chatBox = document.getElementById("chatBox");
+  chatBox.style.display = chatBox.style.display === "none" ? "block" : "none";
+}
+
+function sendChatMessage() {
+  const input = document.getElementById("chatInput");
+  const msg = input.value.trim();
+  if (!msg) return;
+  const container = document.getElementById("chatMessages");
+  const p = document.createElement("p");
+  p.textContent = "أنت: " + msg;
+  container.appendChild(p);
+  input.value = "";
+  container.scrollTop = container.scrollHeight;
+  // هنا ممكن نضيف إرسال الرسالة للإيميل أو حفظها لو فيه باك إند
+}
+</script>
+
+<!-- تصنيف وإضافة المنتجات من كل قسم -->
+<div class="categories">
+  <div class="category" onclick="showCategory('games')">
+    <img src="images/games.png" alt="ألعاب">
+    <p>ألعاب</p>
+  </div>
+  <div class="category" onclick="showCategory('cars')">
+    <img src="images/cars.png" alt="سيارات">
+    <p>سيارات</p>
+  </div>
+  <!-- أضف باقي التصنيفات بنفس الشكل -->
+</div>
+
+<div id="category-pages">
+  <div id="games" style="display: none;">
+    <h2>ألعاب</h2>
+    <form id="gameForm">
+      <input type="text" placeholder="اسم اللعبة" required>
+      <input type="number" placeholder="السعر" required>
+      <input type="file" accept="image/*" required>
+      <button>أضف منتج</button>
+    </form>
+    <div class="game-listings"></div>
+  </div>
+  <!-- أضف نفس الشيء لباقي الأقسام -->
+</div>
+
+<script>
+function showCategory(categoryId) {
+  document.querySelectorAll("#category-pages > div").forEach(div => div.style.display = "none");
+  document.getElementById(categoryId).style.display = "block";
+}
+</script>
+
+<!-- تصميم متجاوب وألوان مريحة -->
+<style>
+body {
+  background-color: #f7f7f7;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.category {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 100px;
+  cursor: pointer;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+.category:hover {
+  background-color: #eee;
+}
+</style>

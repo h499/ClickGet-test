@@ -859,3 +859,688 @@ body {
   background-color: #eee;
 }
 </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClickGet Marketplace</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    header {
+      background-color: #444;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .logo-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #555, #999);
+      z-index: 0;
+      animation: shift 10s infinite linear;
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes shift {
+      0% {background-position: 0 0;}
+      100% {background-position: 100% 100%;}
+    }
+    nav {
+      background-color: #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .product-form {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .product-form input,
+    .product-form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .product-form button {
+      background-color: #444;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .chat-box {
+      margin-top: 20px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    footer {
+      background: #444;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-background"></div>
+    <h1>ClickGet</h1>
+  </header>
+
+  <nav>
+    <a href="#games">ألعاب</a>
+    <a href="#cars">سيارات</a>
+    <a href="#support">الدعم الفني</a>
+  </nav>
+
+  <section id="games">
+    <h2 class="section-title">قسم الألعاب</h2>
+    <form class="product-form">
+      <input type="text" placeholder="اسم المنتج" required />
+      <input type="number" placeholder="السعر" required />
+      <input type="file" accept="image/*" required />
+      <textarea placeholder="وصف المنتج"></textarea>
+      <button type="submit">أضف المنتج</button>
+    </form>
+  </section>
+
+  <section id="cars">
+    <h2 class="section-title">قسم السيارات</h2>
+    <form class="product-form">
+      <input type="text" placeholder="اسم السيارة" required />
+      <input type="number" placeholder="السعر" required />
+      <input type="file" accept="image/*" required />
+      <textarea placeholder="تفاصيل السيارة"></textarea>
+      <button type="submit">أضف السيارة</button>
+    </form>
+  </section>
+
+  <section id="support">
+    <h2 class="section-title">الدعم الفني</h2>
+    <div class="chat-box">
+      <p>تواصل معنا مباشرة عبر هذه الصفحة، سيتم الرد بأسرع وقت ممكن.</p>
+      <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="الاسم" placeholder="اسمك" required />
+        <input type="email" name="الإيميل" placeholder="إيميلك" required />
+        <textarea name="الرسالة" placeholder="رسالتك للدعم الفني" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ClickGet - جميع الحقوق محفوظة</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClickGet Marketplace</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    header {
+      background-color: #444;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .logo-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #555, #999);
+      z-index: 0;
+      animation: shift 10s infinite linear;
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes shift {
+      0% {background-position: 0 0;}
+      100% {background-position: 100% 100%;}
+    }
+    nav {
+      background-color: #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .product-form {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .product-form input,
+    .product-form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .product-form button {
+      background-color: #444;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .chat-box {
+      margin-top: 20px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    footer {
+      background: #444;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-background"></div>
+    <h1>ClickGet</h1>
+  </header>
+
+  <nav>
+    <a href="#games">ألعاب</a>
+    <a href="#cars">سيارات</a>
+    <a href="#support">الدعم الفني</a>
+  </nav>
+
+  <section id="games">
+    <h2 class="section-title">قسم الألعاب</h2>
+    <form class="product-form">
+      <input type="text" placeholder="اسم المنتج" required />
+      <input type="number" placeholder="السعر" required />
+      <input type="file" accept="image/*" required />
+      <textarea placeholder="وصف المنتج"></textarea>
+      <button type="submit">أضف المنتج</button>
+    </form>
+  </section>
+
+  <section id="cars">
+    <h2 class="section-title">قسم السيارات</h2>
+    <form class="product-form">
+      <input type="text" placeholder="اسم السيارة" required />
+      <input type="number" placeholder="السعر" required />
+      <input type="file" accept="image/*" required />
+      <textarea placeholder="تفاصيل السيارة"></textarea>
+      <button type="submit">أضف السيارة</button>
+    </form>
+  </section>
+
+  <section id="support">
+    <h2 class="section-title">الدعم الفني</h2>
+    <div class="chat-box">
+      <p>تواصل معنا مباشرة عبر هذه الصفحة، سيتم الرد بأسرع وقت ممكن.</p>
+      <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="الاسم" placeholder="اسمك" required />
+        <input type="email" name="الإيميل" placeholder="إيميلك" required />
+        <textarea name="الرسالة" placeholder="رسالتك للدعم الفني" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ClickGet - جميع الحقوق محفوظة</p>
+  </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClickGet Marketplace</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    header {
+      background-color: #444;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .logo-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #555, #999);
+      z-index: 0;
+      animation: shift 10s infinite linear;
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes shift {
+      0% {background-position: 0 0;}
+      100% {background-position: 100% 100%;}
+    }
+    nav {
+      background-color: #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .product-form {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .product-form input,
+    .product-form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .product-form button {
+      background-color: #444;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .chat-box {
+      margin-top: 20px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    footer {
+      background: #444;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-background"></div>
+    <h1>ClickGet</h1>
+  </header>
+
+  <nav>
+    <a href="#games">ألعاب</a>
+    <a href="#cars">سيارات</a>
+    <a href="#support">الدعم الفني</a>
+  </nav>
+
+  <section id="games">
+    <h2 class="section-title">قسم الألعاب</h2>
+    <form class="product-form">
+      <input type="text" placeholder="اسم المنتج" required />
+      <input type="number" placeholder="السعر" required />
+      <input type="file" accept="image/*" required />
+      <textarea placeholder="وصف المنتج"></textarea>
+      <button type="submit">أضف المنتج</button>
+    </form>
+  </section>
+
+  <section id="cars">
+    <h2 class="section-title">قسم السيارات</h2>
+    <form class="product-form">
+      <input type="text" placeholder="اسم السيارة" required />
+      <input type="number" placeholder="السعر" required />
+      <input type="file" accept="image/*" required />
+      <textarea placeholder="تفاصيل السيارة"></textarea>
+      <button type="submit">أضف السيارة</button>
+    </form>
+  </section>
+
+  <section id="support">
+    <h2 class="section-title">الدعم الفني</h2>
+    <div class="chat-box">
+      <p>تواصل معنا مباشرة عبر هذه الصفحة، سيتم الرد بأسرع وقت ممكن.</p>
+      <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="الاسم" placeholder="اسمك" required />
+        <input type="email" name="الإيميل" placeholder="إيميلك" required />
+        <textarea name="الرسالة" placeholder="رسالتك للدعم الفني" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ClickGet - جميع الحقوق محفوظة</p>
+  </footer>
+</body>
+</html>
+<!-- تابع لكود HTML السابق - تطوير جديد على موقع ClickGet -->
+
+<!-- إضافة قسم جديد: قسم الإلكترونيات -->
+<section id="electronics">
+  <h2 class="section-title">قسم الإلكترونيات</h2>
+  <form class="product-form">
+    <input type="text" placeholder="اسم المنتج" required />
+    <input type="number" placeholder="السعر" required />
+    <input type="file" accept="image/*" required />
+    <textarea placeholder="وصف المنتج"></textarea>
+    <button type="submit">أضف المنتج</button>
+  </form>
+</section>
+
+<!-- تحسين واجهة المستخدم: كرت عرض منتج -->
+<section>
+  <h2 class="section-title">منتجات مميزة</h2>
+  <div class="product-card" style="background:#fff; border-radius:10px; padding:15px; box-shadow:0 0 10px rgba(0,0,0,0.1); max-width:300px; margin:auto;">
+    <img src="https://via.placeholder.com/300x200" style="width:100%; border-radius:10px;" alt="منتج" />
+    <h3>اسم المنتج</h3>
+    <p>الوصف المختصر للمنتج...</p>
+    <strong>100 درهم</strong>
+  </div>
+</section>
+
+<!-- شريط للإشعارات أو التنبيهات أعلى الموقع -->
+<div style="background:#222; color:white; text-align:center; padding:10px;">
+  📢 عروض حصرية اليوم فقط! سارع بالإعلان في ClickGet
+</div>
+
+<!-- تحسين تجربة المستخدم عند إرسال النماذج -->
+<script>
+  document.querySelectorAll('.product-form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('تم إرسال المنتج بنجاح! (هذا فقط تجريبي، أضف backend لاحقًا)');
+    });
+  });
+</script>
+
+<!-- تحسين التصميم عند الهواتف -->
+<style>
+  @media (max-width: 600px) {
+    nav a {
+      display: block;
+      margin: 10px 0;
+    }
+    .product-form {
+      max-width: 100%;
+    }
+  }
+</style>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClickGet Marketplace</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background-color: #444;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .logo-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #555, #999);
+      z-index: 0;
+      animation: shift 10s infinite linear;
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+    }
+    @keyframes shift {
+      0% {background-position: 0 0;}
+      100% {background-position: 100% 100%;}
+    }
+    nav {
+      background-color: #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .alert {
+      background-color: #ffdd57;
+      color: #222;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+    section {
+      padding: 20px;
+    }
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .product-form {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+      margin: 0 auto 20px;
+    }
+    .product-form input,
+    .product-form textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .product-form button {
+      background-color: #444;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .chat-box {
+      margin-top: 20px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .product-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 300px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .product-card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      background: #444;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="alert">📢 مرحباً بك في ClickGet - سوقك الإلكتروني المفضل في الإمارات!</div>
+
+  <header>
+    <div class="logo-background"></div>
+    <h1>ClickGet</h1>
+  </header>
+
+  <nav>
+    <a href="#games">ألعاب</a>
+    <a href="#cars">سيارات</a>
+    <a href="#electronics">إلكترونيات</a>
+    <a href="#support">الدعم الفني</a>
+  </nav>
+
+  <section id="games">
+    <h2 class="section-title">قسم الألعاب</h2>
+    <form class="product-form">
+      <input type="text" placeholder="اسم المنتج" required>
+      <input type="number" placeholder="السعر" required>
+      <input type="file" accept="image/*" required>
+      <textarea placeholder="وصف المنتج"></textarea>
+      <button type="submit">أضف المنتج</button>
+    </form>
+  </section>
+
+  <section id="cars">
+    <h2 class="section-title">قسم السيارات</h2>
+    <form class="product-form">
+      <input type="text" placeholder="اسم السيارة" required>
+      <input type="number" placeholder="السعر" required>
+      <input type="file" accept="image/*" required>
+      <textarea placeholder="تفاصيل السيارة"></textarea>
+      <button type="submit">أضف السيارة</button>
+    </form>
+  </section>
+
+  <section id="electronics">
+    <h2 class="section-title">قسم الإلكترونيات</h2>
+    <form class="product-form">
+      <input type="text" placeholder="اسم المنتج" required>
+      <input type="number" placeholder="السعر" required>
+      <input type="file" accept="image/*" required>
+      <textarea placeholder="تفاصيل المنتج"></textarea>
+      <button type="submit">أضف المنتج</button>
+    </form>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300" alt="منتج مميز">
+      <h3>هاتف ذكي</h3>
+      <p>هاتف حديث بمواصفات قوية وسعر مناسب.</p>
+      <strong>1500 درهم</strong>
+    </div>
+  </section>
+
+  <section id="support">
+    <h2 class="section-title">الدعم الفني</h2>
+    <div class="chat-box">
+      <p>تواصل معنا مباشرة عبر هذه الصفحة، سيتم الرد بأسرع وقت ممكن.</p>
+      <form action="https://formsubmit.co/nawafhazzaa2008@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="الاسم" placeholder="اسمك" required>
+        <input type="email" name="الإيميل" placeholder="إيميلك" required>
+        <textarea name="الرسالة" placeholder="رسالتك للدعم الفني" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ClickGet - جميع الحقوق محفوظة</p>
+  </footer>
+</body>
+</html>

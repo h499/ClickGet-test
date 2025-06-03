@@ -270,3 +270,66 @@
   <p>هنا يقدر المدير يشوف كل المحادثات</p>
 </div>
 <!-- Chat Feature + Admin Panel End -->
+<!-- قسم التصنيفات الرئيسية مع إمكانية فتح كل قسم لحاله -->
+<section style="padding: 40px; background-color: #f5f5f5;">
+  <h2 style="text-align: center; color: #333;">الأقسام</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px;">
+    <a href="#games" class="category-box">🎮 الألعاب</a>
+    <a href="#cars" class="category-box">🚗 السيارات</a>
+    <a href="#electronics" class="category-box">📱 الإلكترونيات</a>
+    <a href="#furniture" class="category-box">🛋 الأثاث</a>
+    <a href="#clothes" class="category-box">👕 الملابس</a>
+    <a href="#realestate" class="category-box">🏠 العقارات</a>
+    <a href="#animals" class="category-box">🐾 الحيوانات</a>
+    <a href="#services" class="category-box">💼 الخدمات</a>
+    <!-- ضيف أكثر حسب الحاجة -->
+  </div>
+</section>
+
+<style>
+  .category-box {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    color: #444;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .category-box:hover {
+    background: #ddd;
+    color: #000;
+  }
+</style>
+
+<!-- قسم الألعاب كمثال - المنتجات داخل القسم فقط -->
+<section id="games" style="padding: 40px;">
+  <h3 style="text-align: center;">🕹 منتجات الألعاب</h3>
+  <div id="games-products" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;"></div>
+
+  <h4>إضافة منتج جديد للقسم</h4>
+  <form onsubmit="addProduct('games'); return false;">
+    <input type="text" placeholder="اسم المنتج" id="games-title" required>
+    <input type="number" placeholder="السعر" id="games-price" required>
+    <input type="url" placeholder="رابط الصورة" id="games-img" required>
+    <button type="submit">أضف المنتج</button>
+  </form>
+</section>
+
+<script>
+  function addProduct(category) {
+    const title = document.getElementById(`${category}-title`).value;
+    const price = document.getElementById(`${category}-price`).value;
+    const img = document.getElementById(`${category}-img`).value;
+
+    const card = document.createElement("div");
+    card.style = "border:1px solid #ccc; border-radius:10px; padding:10px; width:200px; text-align:center; background:#fff;";
+    card.innerHTML = `<img src="${img}" style="width:100%; border-radius:8px;"><h4>${title}</h4><p>${price} درهم</p>`;
+    document.getElementById(`${category}-products`).appendChild(card);
+
+    // Clear inputs
+    document.getElementById(`${category}-title`).value = "";
+    document.getElementById(`${category}-price`).value = "";
+    document.getElementById(`${category}-img

@@ -218,3 +218,55 @@
   <!-- يتم نسخ القسم أعلاه لبقية الأقسام مع تغيير المعرفات -->
 </body>
 </html>
+<!-- Chat Feature + Admin Panel Start -->
+<script>
+  const adminEmail = "nawafhazzaa2008@gmail.com";
+  const adminPassword = "Hn0566971668";
+  let loggedInAsAdmin = false;
+
+  function login(email, password) {
+    if (email === adminEmail && password === adminPassword) {
+      loggedInAsAdmin = true;
+      alert("تم تسجيل دخول المدير بنجاح");
+      document.querySelector(".admin-panel").style.display = "block";
+    } else {
+      alert("تم تسجيل دخول المستخدم العادي");
+      document.querySelector(".chat-section").style.display = "block";
+    }
+  }
+
+  function sendMessage(from, to, message) {
+    const msg = document.createElement("div");
+    msg.innerText = `${from}: ${message}`;
+    document.getElementById("chat-box").appendChild(msg);
+
+    if (loggedInAsAdmin) {
+      const adminLog = document.createElement("div");
+      adminLog.innerText = `[إشراف المدير] ${from} → ${to}: ${message}`;
+      document.getElementById("admin-log").appendChild(adminLog);
+    }
+  }
+</script>
+
+<div style="margin-top: 40px;">
+  <h2>تسجيل الدخول</h2>
+  <input type="email" id="email" placeholder="الإيميل">
+  <input type="password" id="password" placeholder="كلمة المرور">
+  <button onclick="login(email.value, password.value)">تسجيل الدخول</button>
+</div>
+
+<div class="chat-section" style="display:none; margin-top:20px;">
+  <h3>دردشة بين البائع والمشتري</h3>
+  <div id="chat-box" style="border:1px solid gray; padding:10px; height:150px; overflow:auto;"></div>
+  <input type="text" id="from" placeholder="اسمك">
+  <input type="text" id="to" placeholder="إلى">
+  <input type="text" id="message" placeholder="الرسالة">
+  <button onclick="sendMessage(from.value, to.value, message.value)">أرسل</button>
+</div>
+
+<div class="admin-panel" style="display:none; margin-top:30px;">
+  <h3>لوحة إشراف المدير</h3>
+  <div id="admin-log" style="border:1px solid black; padding:10px; height:150px; overflow:auto;"></div>
+  <p>هنا يقدر المدير يشوف كل المحادثات</p>
+</div>
+<!-- Chat Feature + Admin Panel End -->
